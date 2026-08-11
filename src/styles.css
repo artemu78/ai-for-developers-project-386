@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root { font-family: 'DM Sans', sans-serif; color: #20201e; background: #f4f2ec; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input, textarea { font: inherit; }
+button { color: inherit; }
+.app-shell { min-height: 100vh; display: flex; flex-direction: column; }
+header, footer { max-width: 1240px; width: calc(100% - 48px); margin: auto; display: flex; justify-content: space-between; align-items: center; }
+header { height: 88px; border-bottom: 1px solid #d9d5cb; }
+.brand { font: 700 24px 'Manrope'; color: #20201e; text-decoration: none; letter-spacing: -.06em; }
+.brand span { color: #ff5d3b; }
+nav { display: flex; gap: 8px; }
+nav button { border: 0; background: transparent; padding: 10px 16px; border-radius: 100px; cursor: pointer; }
+nav button.active { background: #20201e; color: white; }
+main { flex: 1; max-width: 1240px; width: calc(100% - 48px); margin: 0 auto; padding: 72px 0 90px; }
+.booking-page { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: start; }
+.eyebrow { color: #ff5d3b; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; }
+h1 { font: 500 clamp(44px, 6vw, 76px)/1.02 'Manrope'; letter-spacing: -.06em; margin: 20px 0 28px; }
+.intro > p:last-child { max-width: 410px; color: #67645d; line-height: 1.65; font-size: 17px; }
+.booking-card, .panel { background: #fff; border: 1px solid #dedbd2; border-radius: 4px; box-shadow: 0 16px 50px rgba(50,45,36,.07); }
+.step { display: grid; grid-template-columns: 42px 1fr; gap: 12px; padding: 30px 34px; border-bottom: 1px solid #e9e6df; }
+.step:last-child { border-bottom: 0; }
+.step > b { color: #aaa69c; font-size: 12px; padding-top: 6px; }
+h2 { font: 600 20px 'Manrope'; margin: 0 0 20px; letter-spacing: -.03em; }
+.types, .slots { display: flex; flex-wrap: wrap; gap: 9px; }
+.types button, .slots button { border: 1px solid #d8d4ca; background: #fff; border-radius: 3px; padding: 13px 15px; cursor: pointer; text-align: left; }
+.types button { min-width: 145px; display: flex; flex-direction: column; gap: 3px; }
+.types small, .muted, .description { color: #817d73; }
+.description { margin: 14px 0 0; line-height: 1.5; }
+.types button.selected, .slots button.selected { border-color: #20201e; background: #20201e; color: #fff; }
+.types button.selected small { color: #cac7c0; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+label { display: grid; gap: 7px; font-size: 12px; color: #6c685f; }
+input, textarea { width: 100%; border: 1px solid #d8d4ca; border-radius: 3px; background: #faf9f6; padding: 13px; color: #20201e; outline: none; }
+input:focus, textarea:focus { border-color: #20201e; }
+.primary { margin-top: 18px; width: 100%; display: flex; justify-content: space-between; border: 0; border-radius: 3px; padding: 15px 18px; background: #ff5d3b; color: white; cursor: pointer; font-weight: 600; }
+.primary:disabled { background: #c8c4bb; cursor: not-allowed; }
+.notice, .loading { padding: 15px 18px; margin-bottom: 24px; border-radius: 3px; }
+.notice.error { background: #ffe8e2; color: #a82d16; }
+.notice.success { background: #def3df; color: #27622e; }
+.owner-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 44px; }
+.owner-head h1 { margin-bottom: 10px; }
+.owner-head p { color: #77736a; }
+.stat { display: flex; align-items: end; gap: 12px; }
+.stat strong { font: 500 54px 'Manrope'; }
+.stat span { color: #77736a; padding-bottom: 10px; }
+.owner-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: start; }
+.panel { overflow: hidden; }
+.panel-title { padding: 26px 28px 20px; display: flex; justify-content: space-between; }
+.panel-title > span { background: #efede7; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; }
+.meeting, .event-type { display: flex; gap: 24px; justify-content: space-between; padding: 20px 28px; border-top: 1px solid #e9e6df; }
+.meeting time { width: 155px; color: #ff5d3b; font-size: 13px; }
+.meeting div, .event-type div { display: grid; gap: 6px; flex: 1; }
+.meeting span, .event-type p, .event-type > span { color: #817d73; font-size: 13px; margin: 0; }
+.new-type { border-top: 1px solid #e9e6df; background: #faf9f6; padding: 26px 28px; display: grid; gap: 14px; }
+.new-type h3 { margin: 0 0 6px; }
+.new-type textarea { resize: vertical; min-height: 72px; }
+.empty { padding: 0 28px 28px; color: #817d73; }
+footer { border-top: 1px solid #d9d5cb; height: 72px; color: #77736a; font-size: 12px; }
+@media (max-width: 800px) {
+  header, footer, main { width: calc(100% - 30px); }
+  header { height: auto; padding: 18px 0; align-items: flex-start; gap: 14px; }
+  nav { flex-direction: column; align-items: stretch; }
+  main { padding: 45px 0 70px; }
+  .booking-page, .owner-grid { grid-template-columns: 1fr; gap: 36px; }
+  .step { padding: 24px 18px; grid-template-columns: 30px 1fr; }
+  .fields { grid-template-columns: 1fr; }
+  .owner-head { align-items: flex-start; flex-direction: column; }
+  .meeting { flex-direction: column; gap: 8px; }
+  footer span:last-child { display: none; }
+}

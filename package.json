@@ -1,15 +1,29 @@
 {
-  "name": "call-calendar-api",
+  "name": "call-calendar",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsp compile .",
-    "check": "tsp compile . --no-emit"
+    "dev": "vite",
+    "build": "npm run build:api && npm run build:frontend",
+    "build:api": "tsp compile .",
+    "build:frontend": "tsc -b && vite build",
+    "check": "npm run check:api && npm run check:frontend",
+    "check:api": "tsp compile . --no-emit",
+    "check:frontend": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@typespec/compiler": "1.14.0",
     "@typespec/http": "1.14.0",
-    "@typespec/openapi3": "1.14.0"
+    "@typespec/openapi3": "1.14.0",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
   }
 }

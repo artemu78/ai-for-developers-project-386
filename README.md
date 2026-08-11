@@ -2,8 +2,9 @@
 
 [![Actions Status](https://github.com/artemu78/ai-for-developers-project-386/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemu78/ai-for-developers-project-386/actions)
 
-Design First API-контракт сервиса записи на звонки. Источник правды находится в
-[`main.tsp`](main.tsp), а OpenAPI генерируется из него автоматически.
+Приложение для записи на звонки: API-контракт на TypeSpec и отдельный фронтенд
+на React + TypeScript + Vite. Источник правды API находится в [`main.tsp`](main.tsp),
+а OpenAPI генерируется из него автоматически.
 
 Контракт описывает:
 
@@ -22,3 +23,20 @@ npm run build
 ```
 
 Сгенерированная спецификация появится в `generated/openapi/openapi.yaml`.
+
+## Фронтенд
+
+```bash
+npm run dev
+```
+
+По умолчанию Vite проксирует запросы `/api` на `http://localhost:3000`. Для
+другого адреса бэкенда задайте `API_PROXY_TARGET` при запуске dev-сервера либо
+`VITE_API_URL` при сборке. Интерфейс включает публичную запись гостя и панель
+владельца с предстоящими встречами и созданием типов встреч.
+
+## GitHub Pages
+
+Workflow `.github/workflows/deploy-pages.yml` собирает и публикует фронтенд при
+каждом обновлении ветки `main`. В настройках репозитория GitHub Pages должен
+использовать источник **GitHub Actions**.
