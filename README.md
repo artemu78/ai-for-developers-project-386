@@ -6,7 +6,8 @@
 на React + TypeScript + Vite. Источник правды API находится в [`main.tsp`](main.tsp),
 а OpenAPI генерируется из него автоматически.
 
-**Опубликованное приложение:** ссылка будет добавлена после деплоя на Render.
+**Опубликованное приложение:**
+[call-calendar-386-production.up.railway.app](https://call-calendar-386-production.up.railway.app)
 
 Контракт описывает:
 
