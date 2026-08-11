@@ -6,3 +6,5 @@ generated/
 .env.local
 .DS_Store
 .aws-sam/
+test-results/
+playwright-report/

@@ -20,6 +20,7 @@
 npm install
 npm run check
 npm run build
+npm run test:e2e
 ```
 
 Сгенерированная спецификация появится в `generated/openapi/openapi.yaml`.
@@ -59,3 +60,15 @@ sam deploy --guided
 
 Текущий стек `call-calendar-backend` развёрнут в `us-east-1`, а GitHub Pages
 workflow уже собирает фронтенд с адресом этого API.
+
+## Интеграционные проверки и релизы
+
+Основной путь бронирования описан в [`docs/user-scenarios.md`](docs/user-scenarios.md)
+и проверяется Playwright в настоящем браузере. Workflow
+`.github/workflows/e2e.yml` запускает статические, серверные и e2e-проверки для
+pull request и после изменений в `main`.
+
+Сообщения коммитов должны соответствовать Conventional Commits; правила для
+разработчиков и агентов зафиксированы в [`AGENTS.md`](AGENTS.md). После попадания
+таких коммитов в `main` workflow `.github/workflows/release-please.yml` создаёт
+или обновляет release-PR с новой версией и `CHANGELOG.md`.
