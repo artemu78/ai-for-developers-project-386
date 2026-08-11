@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "node backend/server.mjs",
     "build": "npm run build:api && npm run build:frontend",
     "build:api": "tsp compile .",
     "build:frontend": "tsc -b && vite build",
