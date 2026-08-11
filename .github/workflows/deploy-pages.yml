@@ -33,6 +33,7 @@ jobs:
       - name: Build frontend
         env:
           BASE_PATH: /ai-for-developers-project-386/
+          VITE_API_URL: https://388ln6g825.execute-api.us-east-1.amazonaws.com
         run: npm run build:frontend
 
       - name: Configure GitHub Pages

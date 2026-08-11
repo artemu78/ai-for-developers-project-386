@@ -8,9 +8,10 @@
     "build": "npm run build:api && npm run build:frontend",
     "build:api": "tsp compile .",
     "build:frontend": "tsc -b && vite build",
-    "check": "npm run check:api && npm run check:frontend",
+    "check": "npm run check:api && npm run check:frontend && npm run test:backend",
     "check:api": "tsp compile . --no-emit",
-    "check:frontend": "tsc -b --pretty false"
+    "check:frontend": "tsc -b --pretty false",
+    "test:backend": "node --test backend/*.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
